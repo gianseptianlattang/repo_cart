@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@chakra-ui/react";
+import "./App.css";
+import { HomePage } from "./pages/HomePage";
+import { Route, Routes } from "react-router-dom";
+import { CartPage } from "./pages/CartPage";
+import { Navbar } from "./components/navbar/_Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/cart" element={<CartPage />}></Route>
+      </Routes>
+    </Box>
   );
 }
 
